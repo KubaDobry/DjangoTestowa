@@ -10,18 +10,16 @@
             <h1>Witam na stronie bloga!</h1>
             <h2>Blog o programowaniu</h2>
         </div>
+
+            {% for post in posts %}
         <div>
-            <p>To jest akapit</p>
-            <em>Wyróżniony tekst</em><br>
-            <strong>pogrubiony tekst</strong><br>
-            <a href="https://strefakursow.pl">LINK</a>
+            <p>opublikowany: {{ post.published_date }}</p>
+            <h2><a href="">{{ post.title }}</a></h2>
+            <em>{{ post.text|linebreaksbr }}</em>
         </div>
+            {% endfor %}
         <div>
-            <ul>
-                <li>1</li>
-                <li>2</li>
-                <li>3</li>
-            </ul>
+
         </div>
     </body>
 </html>
